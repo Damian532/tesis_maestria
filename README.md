@@ -51,9 +51,34 @@ El proyecto compara diferentes enfoques de bootstrapping para el análisis de da
 Los análisis incluyen la creación de intervalos de confianza, varianzas y comparaciones entre métodos para validar la robustez de los resultados electorales.
 
 ## Requisitos
-- Python con Jupyter Notebook.
-- Librerías: pandas, numpy, scipy, matplotlib, etc. (verificar en los notebooks).
-- Datos electorales de Yucatán (proporcionados en las carpetas Bases/).
+- **Python**: 3.8 o superior
+- **Dependencias**: Se encuentran listadas en `requirements.txt`
+
+### Instalación de Dependencias
+Para instalar las dependencias necesarias, ejecute:
+
+```bash
+pip install -r requirements.txt
+```
+
+O, si utiliza Conda:
+
+```bash
+conda create --name bootstrap_env --file requirements.txt
+conda activate bootstrap_env
+```
+
+### Paquetes requeridos
+- **numpy**: Operaciones numéricas y cálculos estadísticos
+- **pandas**: Manipulación y análisis de datos (DataFrames)
+- **matplotlib**: Visualización de gráficos
+- **seaborn**: Visualización estadística avanzada
+- **scikit-learn**: Herramientas de aprendizaje automático (train/test split)
+- **jupyter**: Ejecución de notebooks Jupyter interactivos
+- **ipython**: Shell interactivo mejorado
+
+### Datos requeridos
+- Datos electorales de Yucatán (proporcionados en las carpetas Bases/)
 
 ## Uso
 1. Ejecutar los notebooks en orden: desde la creación de la base hasta los análisis finales.
