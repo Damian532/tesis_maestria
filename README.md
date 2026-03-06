@@ -80,10 +80,55 @@ conda activate bootstrap_env
 ### Datos requeridos
 - Datos electorales de Yucatán (proporcionados en las carpetas Bases/)
 
+## Flujo de Ejecución
+
+El proyecto debe ejecutarse en el siguiente orden:
+
+### 1. Crear la Base de Análisis
+Ejecutar primero:
+```
+Codigos/Codigo_creacion_base_analisis/Creacion_base_analsis.ipynb
+```
+**Objetivo**: Procesar datos crudos y generar la base limpia y lista para análisis.
+
+**Salida**:
+- `Bases/Base elecciones analsis/base_elecciones_yuc_analsis.csv`
+
+### 2. Ejecutar Análisis de Bootstrap
+Una vez generada la base de análisis, ejecutar todos los notebooks que comienzan con `Bootstrap` en la carpeta:
+```
+Codigos/Codigos_bootstraps_finales/Codigos_bootstraps_f/
+```
+Se incluyen:
+- `Bootstrap_directo_votos.ipynb`
+- `Bootstrap_submuestra_votos_metodo_1.ipynb`
+- `Bootstrap_submuestra_votos_metodo_2.ipynb`
+- `Bootstrap_por_casillas.ipynb` (y variantes)
+
+**Objetivo**: Aplicar diferentes métodos de bootstrapping a los datos electorales y generar métricas estadísticas.
+
+**Salida**:
+- Resultados guardados en `Bases finales rep/Bootstrap votos/` (subdivididos por método)
+- Resultados guardados en `Bases finales rep/Bootstrap por casillas/`
+
+### 3. Comparar Resultados
+Una vez completados todos los bootstraps, ejecutar los análisis de comparación:
+```
+Codigos/Codigos_bootstraps_finales/Comparaciones_analisis_f/
+```
+
+**Objetivo**: Comparar resultados entre diferentes métodos de bootstrapping y generar tablas para reportes.
+
+### Archivos Adicionales
+- **Creacion_tablas_latex/**: Notebooks para generar tablas en LaTeX con los resultados finales.
+- **Codigos_antiguos/**: Versiones previas y código descontinuado (no ejecutar para análisis final).
+- **Analisis ad-hoc/**: Análisis específicos y exploratorios (opcional, depende de necesidades).
+
 ## Uso
-1. Ejecutar los notebooks en orden: desde la creación de la base hasta los análisis finales.
-2. Utilizar las funciones auxiliares para replicar los bootstraps.
-3. Generar tablas LaTeX para reportes académicos.
+1. Instalar dependencias: `pip install -r requirements.txt`
+2. Ejecutar notebooks siguiendo el flujo indicado arriba.
+3. Utilizar las funciones auxiliares de `Funciones_utiles_f/` para replicar bootstraps personalizados.
+4. Generar tablas LaTeX desde `Creacion_tablas_latex/` para reportes académicos.
 
 Este repositorio facilita la replicabilidad y verificación de los resultados de la tesis.
 
