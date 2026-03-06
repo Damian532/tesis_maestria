@@ -1,2 +1,2 @@
-# tesis_maestria
+# Tesis maestria
 Los códigos de la tesis de maestria
